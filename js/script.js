@@ -50,3 +50,62 @@ window.addEventListener('load', () => {
   setTimeout(() => loader.classList.add('hidden'), 800);
 });
 
+
+
+//   =====COPY ALERT=====
+// Ensure the DOM is fully loaded before attaching event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.getElementById('copy-btn');
+  
+    copyButton.addEventListener('click', () => {
+      navigator.clipboard.writeText('9jZgvgS2bWtQiYzv48GcWzY4tnkeRSANbTm8Kp1LmSyS')
+        .then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Copied!',
+            text: 'Copy Addr PAO Success',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        })
+        .catch(() => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Copy failed!'
+          });
+        });
+    });
+  });
+
+
+// FUNGSI MENUTUP OFFCANVAS SETELAH MEMILIH MENU
+document.addEventListener('DOMContentLoaded', () => {
+  const offcanvasEl = document.getElementById('offcanvasNavbar');
+  const bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
+
+  // Tangani klik di semua link/menu dalam offcanvas
+  offcanvasEl.querySelectorAll('a.nav-link, a.btn').forEach(el => {
+    el.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+
+      e.preventDefault();
+
+      // Pasang listener sekali untuk remove backdrop setelah benar-benar tertutup
+      const onHidden = () => {
+        // Buang backdrop bawaan Bootstrap
+        document.querySelectorAll('.offcanvas-backdrop').forEach(b => b.remove());
+        // Scroll ke target
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        offcanvasEl.removeEventListener('hidden.bs.offcanvas', onHidden);
+      };
+      offcanvasEl.addEventListener('hidden.bs.offcanvas', onHidden);
+
+      // Tutup offcanvas
+      bsOffcanvas.hide();
+    });
+  });
+});
+
