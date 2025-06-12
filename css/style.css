@@ -1,0 +1,140 @@
+
+        :root {
+            --primary: #2a5f7f;
+            --secondary: #ffd166;
+            --accent: #ef476f;
+            --dark: #073b4c;
+            --light: #f8f9fa;
+        }
+        
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 2rem;
+            color: var(--primary) !important;
+            letter-spacing: 1px;
+        }
+        
+        .navbar-brand span {
+            color: var(--accent);
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark) !important;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem !important;
+            border-radius: 30px;
+            margin: 0 2px;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--secondary);
+            color: var(--dark) !important;
+        }
+        
+        .buy-btn {
+            background: linear-gradient(135deg, var(--accent), #ff8a5b);
+            color: white !important;
+            border-radius: 30px;
+            padding: 0.5rem 1.5rem !important;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .buy-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .offcanvas-header {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .offcanvas-title {
+            font-weight: 900;
+            font-size: 1.8rem;
+        }
+        
+        .offcanvas-body {
+            background-color: var(--light);
+        }
+        
+        .mobile-menu .nav-link {
+            margin: 5px 0;
+            padding: 12px 20px !important;
+            border-radius: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .mobile-menu .buy-btn {
+            margin-top: 15px;
+            padding: 12px 20px !important;
+            font-size: 1.1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+.hero-section {
+    /* background-color: var(--bs-secondary); */
+    background-image: url('/assets/bg/hero-section.webp');
+    background-size: auto ;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    
+    background-position: center bottom;
+    min-height: 100vh;
+    text-align: center;
+    padding-top: 17vh;
+}
+
+        .hero-title {
+            font-weight: 900;
+            font-size: 3.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .highlight {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--secondary);
+            border-radius: 30px;
+            transform: rotate(-3deg);
+        }
+        
+        @media (max-width: 991.98px) {
+            .desktop-menu {
+                display: none;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 4.5rem;
+            }
+        }
+
+
+/* Loader full-screen wrapper */
+#loader {
+  background-color: #ffffff; /* ganti kalau mau warna lain */
+  transition: opacity 0.5s ease;
+}
+
+/* Saat sudah selesai loading, kita sembunyikan */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
